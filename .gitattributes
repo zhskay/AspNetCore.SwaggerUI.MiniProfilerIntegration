@@ -1,0 +1,17 @@
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+
+###############################################################################
+# Explicitly declare text files with specific line endings
+###############################################################################
+*.sln    text eol=crlf
+*.csproj text eol=crlf
+*.cs     text eol=crlf
+*.tt     text eol=crlf
+*.props  text eol=crlf
+*.json   text eol=lf
+*.yml    text eol=lf
+*.md     text eol=lf
+*.sh     text eol=lf
