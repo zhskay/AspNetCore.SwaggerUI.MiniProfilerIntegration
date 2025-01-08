@@ -16,7 +16,7 @@ app.UseMiniProfiler();
 app.UseSwagger();
 
 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.) + MiniProfiler
-app.UseSwaggerUIWithMiniProfiler();
+app.UseSwaggerUI(o => o.RenderMiniProfiler(app));
 
 app.MapControllers();
 app.Run();

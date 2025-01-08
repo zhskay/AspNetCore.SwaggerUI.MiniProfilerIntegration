@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AspNetCore.SwaggerUI.MiniProfilerIntegration\AspNetCore.SwaggerUI.MiniProfilerIntegration.csproj" />
+    <ProjectReference Include="..\..\src\SwaggerUI.MiniProfilerIntegration\SwaggerUI.MiniProfilerIntegration.csproj" />
   </ItemGroup>
 
 </Project>

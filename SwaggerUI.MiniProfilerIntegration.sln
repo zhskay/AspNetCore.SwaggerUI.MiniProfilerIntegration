@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		stylecop.ruleset = stylecop.ruleset
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.SwaggerUI.MiniProfilerIntegration", "src\AspNetCore.SwaggerUI.MiniProfilerIntegration\AspNetCore.SwaggerUI.MiniProfilerIntegration.csproj", "{CBE78FFD-E331-4F7A-8279-F9752C6CB15B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwaggerUI.MiniProfilerIntegration", "src\SwaggerUI.MiniProfilerIntegration\SwaggerUI.MiniProfilerIntegration.csproj", "{CBE78FFD-E331-4F7A-8279-F9752C6CB15B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.Sample", "test\AspNetCore.Sample\AspNetCore.Sample.csproj", "{96331D87-2334-458D-A5A7-8844BF8515D3}"
 EndProject
