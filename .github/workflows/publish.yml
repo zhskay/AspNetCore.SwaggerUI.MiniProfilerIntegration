@@ -26,7 +26,7 @@ jobs:
       - name: Update version in .csproj
         run: |
           VERSION=${{ env.VERSION }}
-          sed -i 's/<Version>.*<\/Version>/<Version>'$VERSION'<\/Version>/' src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj
+          sed -i 's/<Version>.*<\/Version>/<Version>'${VERSION#v}'<\/Version>/' src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj
 
       - name: Restore dependencies
         run: dotnet restore src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj
