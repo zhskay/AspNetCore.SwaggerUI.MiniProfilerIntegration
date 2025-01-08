@@ -1,0 +1,43 @@
+name: Publish to NuGet
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: | 
+            8.0.x
+            9.0.x
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Update version in .csproj
+        run: |
+          VERSION=${{ env.VERSION }}
+          sed -i 's/<Version>.*<\/Version>/<Version>'$VERSION'<\/Version>/' src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj
+
+      - name: Restore dependencies
+        run: dotnet restore src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj
+
+      - name: Build the project
+        run: dotnet build src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj --configuration Release
+
+      - name: Pack the project
+        run: dotnet pack src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj --configuration Release --output ./nupkgs
+
+      - name: Publish package to NuGet
+        run: dotnet nuget push ./nupkgs/SwaggerUI.MiniProfilerIntegration.*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
