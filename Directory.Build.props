@@ -1,0 +1,17 @@
+<Project>
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All"/>
+  </ItemGroup>
+
+  <PropertyGroup>
+	<CodeAnalysisRuleSetLocation>$(MSBuildThisFileDirectory)</CodeAnalysisRuleSetLocation>
+  </PropertyGroup>
+
+  <PropertyGroup>
+	<CodeAnalysisRuleSet>$(CodeAnalysisRuleSetLocation)\stylecop.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<AdditionalFiles Include="$(CodeAnalysisRuleSetLocation)\stylecop.json" />
+  </ItemGroup>
+</Project>
