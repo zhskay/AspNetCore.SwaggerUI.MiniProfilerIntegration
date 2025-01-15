@@ -3,6 +3,21 @@
   <PropertyGroup>
 	<TargetFrameworks>net9.0;net8.0</TargetFrameworks>
 	<Nullable>enable</Nullable>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+	<PackageId>$(AssemblyName)</PackageId>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageProjectUrl>https://github.com/zhskay/SwaggerUI.MiniProfilerIntegration</PackageProjectUrl>
+	<PackageReleaseNotes>See https://github.com/zhskay/SwaggerUI.MiniProfilerIntegration/releases for more info</PackageReleaseNotes>
+	<PackageBaseTags>SwaggerUI;MiniProfiler;Performance;Profiling;Timing</PackageBaseTags>
+	<Deterministic>false</Deterministic>
+
+	<RepositoryUrl>https://github.com/zhskay/SwaggerUI.MiniProfilerIntegration.git</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<RepositoryBranch>master</RepositoryBranch>
+
+	<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	<IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
