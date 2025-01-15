@@ -38,7 +38,7 @@ jobs:
         run: dotnet build src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj --configuration Release
 
       - name: Pack the project
-        run: dotnet pack src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj --configuration Release --output ./nupkgs
+        run: dotnet pack src/SwaggerUI.MiniProfilerIntegration/SwaggerUI.MiniProfilerIntegration.csproj --configuration Release --include-symbols --include-source --output ./nupkgs
 
       - name: Publish package to NuGet
         run: dotnet nuget push ./nupkgs/SwaggerUI.MiniProfilerIntegration.*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
